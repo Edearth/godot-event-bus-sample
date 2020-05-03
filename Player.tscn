@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://DebugUITheme.tres" type="Theme" id=1]
+[ext_resource path="res://EmitSignalOnButtonClick.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/Cascadia.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/images/player.png" type="Texture" id=4]
+[ext_resource path="res://ShowDamage.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+outline_size = 2
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="Player" type="Node2D"]
+position = Vector2( 200, 200 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+
+[node name="UI" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Damage" type="Label" parent="UI"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -42.0058
+margin_top = -70.0
+margin_right = -0.00582886
+margin_bottom = -44.663
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0.172549, 0.172549, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "-10"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Debug" type="Control" parent="."]
+margin_left = 30.0081
+margin_top = 25.7213
+margin_right = 30.0081
+margin_bottom = 25.7213
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Debug"]
+margin_right = 128.0
+margin_bottom = 40.0
+rect_clip_content = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Debug/Panel"]
+margin_right = 125.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Debug/Panel/VBoxContainer"]
+margin_right = 125.0
+margin_bottom = 14.0
+text = "Player debug"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EmitDamage" type="Button" parent="Debug/Panel/VBoxContainer"]
+margin_top = 18.0
+margin_right = 125.0
+margin_bottom = 38.0
+mouse_default_cursor_shape = 2
+text = "Emit Damage [10]"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
