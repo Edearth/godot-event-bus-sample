@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/scripts/TestCoroutines.gd" type="Script" id=1]
+
+[node name="CoroutinesExample" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 200.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel"]
+margin_left = 52.0
+margin_top = 44.0
+margin_right = 88.0
+margin_bottom = 64.0
+text = "one"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Panel"]
+margin_left = 104.0
+margin_top = 44.0
+margin_right = 139.0
+margin_bottom = 64.0
+text = "two"
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 5.0
+margin_top = 14.0
+margin_right = 197.0
+margin_bottom = 28.0
+text = "click both buttons to continue"
+align = 1
+valign = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

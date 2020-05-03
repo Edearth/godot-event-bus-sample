@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://DebugUITheme.tres" type="Theme" id=1]
-[ext_resource path="res://EmitSignalOnButtonClick.gd" type="Script" id=2]
+[ext_resource path="res://assets/scripts/EmitSignalOnButtonClick.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/Cascadia.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/images/player.png" type="Texture" id=4]
-[ext_resource path="res://ShowDamage.gd" type="Script" id=5]
+[ext_resource path="res://assets/scripts/ShowDamage.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -26,7 +25,6 @@ __meta__ = {
 }
 
 [node name="Damage" type="Label" parent="UI"]
-visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -42.0058
@@ -42,12 +40,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Name" type="Label" parent="UI"]
+margin_left = -24.0065
+margin_top = 55.7294
+margin_right = 15.9935
+margin_bottom = 69.7294
+text = "Hero"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Debug" type="Control" parent="."]
-margin_left = 30.0081
+margin_left = 29.0081
 margin_top = 25.7213
-margin_right = 30.0081
+margin_right = 29.0081
 margin_bottom = 25.7213
-theme = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -56,6 +63,9 @@ __meta__ = {
 margin_right = 128.0
 margin_bottom = 40.0
 rect_clip_content = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Debug/Panel"]
 margin_right = 125.0
